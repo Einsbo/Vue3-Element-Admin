@@ -6,7 +6,7 @@ import service from "@/utils/request";
  * @param password 密码
  * @returns
  */
-export function login(username: string, password: string) {
+export function login(username: string, password: string): any {
   return service.request({
     url: "/login/",
     method: "post",
@@ -14,5 +14,12 @@ export function login(username: string, password: string) {
       username,
       password,
     },
+  });
+}
+
+export function user() {
+  return service.request({
+    url: "/user/",
+    method: "post",
   });
 }

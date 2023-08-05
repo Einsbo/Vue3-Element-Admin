@@ -1,14 +1,12 @@
 <template>
-  <div class="app">app</div>
+  <div class="app">
+    app
+
+    <el-button>我是 ElButton</el-button>
+  </div>
 </template>
 
-<script setup lang="ts">
-import { login } from "./api/user.ts";
-
-login({ username: "first", password: 123 }).then((res) => {
-  console.log(res);
-});
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .app {
