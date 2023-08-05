@@ -1,0 +1,15 @@
+@import "./normalize.scss";
+@import "./reset.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+div {
+  box-sizing: border-box;
+}
