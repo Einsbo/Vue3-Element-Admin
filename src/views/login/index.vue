@@ -5,12 +5,13 @@
         <h2>login</h2>
         <div class="inputbox">
           <!-- <ion-icon name="mail-outline"></ion-icon> -->
+          <el-icon><Message /></el-icon>
           <input type="email" required />
-
           <label for="">邮箱</label>
         </div>
 
         <div class="inputbox">
+          <el-icon><Unlock /></el-icon>
           <!-- <ion-icon name="lock-closed-outline"></ion-icon> -->
           <input type="passowrd" required />
           <label for="">密码</label>
@@ -32,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { Lock } from "@element-plus/icons-vue";
+import { Message, Unlock } from "@element-plus/icons-vue";
 </script>
 
 <style scoped lang="scss">
@@ -78,6 +79,14 @@ section {
       margin: 30px 0;
       widows: 310px;
       border-bottom: 2px solid #fff;
+
+      .el-icon {
+        position: absolute;
+        right: 8px;
+        color: #000;
+        font-size: 110%;
+        top: 20px;
+      }
 
       label {
         position: absolute;
