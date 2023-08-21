@@ -23,7 +23,7 @@
           <a href="#">忘记密码</a>
         </div>
 
-        <button>登录</button>
+        <button @click="clickLogin">登录</button>
         <div class="register">
           <p>Don't have a account? <a href="#">注册</a></p>
         </div>
@@ -33,7 +33,13 @@
 </template>
 
 <script setup lang="ts">
-import { Message, Unlock } from "@element-plus/icons-vue";
+import { login } from "@/api/user";
+
+function clickLogin() {
+  login("username", "passowrd").then((res: any) => {
+    console.log(res);
+  });
+}
 </script>
 
 <style scoped lang="scss">
