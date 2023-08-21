@@ -5,21 +5,27 @@
         <h2>login</h2>
         <div class="inputbox">
           <!-- <ion-icon name="mail-outline"></ion-icon> -->
-          <el-icon><Message /></el-icon>
-          <input type="email" required />
-          <label for="">邮箱</label>
+          <input id="email" type="email" required v-model="ruleForm.email" />
+          <label for="email">邮箱</label>
+          <div class="tips">123</div>
         </div>
 
         <div class="inputbox">
           <el-icon><Unlock /></el-icon>
           <!-- <ion-icon name="lock-closed-outline"></ion-icon> -->
-          <input type="passowrd" required />
-          <label for="">密码</label>
+          <input
+            id="password"
+            type="passowrd"
+            required
+            v-model="ruleForm.password"
+          />
+          <label for="password">密码</label>
+          <div class="tips">234</div>
         </div>
 
         <div class="forget">
-          <input type="checkbox" />
-          <label for="">记住密码</label>
+          <input id="checkbox" type="checkbox" v-model="ruleForm.checkPass" />
+          <label for="checkbox">记住密码</label>
           <a href="#">忘记密码</a>
         </div>
 
@@ -34,11 +40,19 @@
 
 <script setup lang="ts">
 import { login } from "@/api/user";
+import { reactive } from "vue";
+
+const ruleForm = reactive({
+  password: "",
+  checkPass: null,
+  email: "",
+});
 
 function clickLogin() {
   login("username", "passowrd").then((res: any) => {
     console.log(res);
   });
+  console.log(ruleForm);
 }
 </script>
 
@@ -106,6 +120,13 @@ section {
         pointer-events: none;
         // transition 过渡
         transition: 0.5s;
+      }
+
+      .tips {
+        position: absolute;
+        left: 5px;
+        color: rgb(187, 55, 55);
+        display: none;
       }
 
       // input:focus ~ label, input:valid ~ label
