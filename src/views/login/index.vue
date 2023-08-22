@@ -1,7 +1,7 @@
 <template>
   <section class="login">
     <div class="from-box">
-      <div class="from-value">
+      <form class="from-value">
         <h2>login</h2>
         <div class="inputbox">
           <!-- <ion-icon name="mail-outline"></ion-icon> -->
@@ -15,7 +15,7 @@
           <!-- <ion-icon name="lock-closed-outline"></ion-icon> -->
           <input
             id="password"
-            type="passowrd"
+            type="password"
             required
             v-model="ruleForm.password"
           />
@@ -33,7 +33,7 @@
         <div class="register">
           <p>Don't have a account? <a href="#">注册</a></p>
         </div>
-      </div>
+      </form>
     </div>
   </section>
 </template>
@@ -49,9 +49,11 @@ const ruleForm = reactive({
 });
 
 function clickLogin() {
-  login("username", "passowrd").then((res: any) => {
-    console.log(res);
-  });
+  if (!ruleForm.password && !ruleForm.email) {
+    login("username", "passowrd").then((res: any) => {
+      console.log(res);
+    });
+  }
   console.log(ruleForm);
 }
 </script>
