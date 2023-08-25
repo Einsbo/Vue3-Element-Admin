@@ -2,12 +2,7 @@
   <div class="login">
     <form action="" id="loginForm">
       <h2>系统登录</h2>
-      <el-input
-        v-model="loginForm.account"
-        placeholder="账户"
-        clearable
-        type="text"
-      >
+      <el-input v-model="loginForm.account" placeholder="账户" clearable>
         <template #suffix>
           <el-icon><User /></el-icon>
         </template>
@@ -19,7 +14,7 @@
         show-password
       >
       </el-input>
-      <el-button type="primary">登陆</el-button>
+      <el-button type="primary" @click="handleLogin">登陆</el-button>
     </form>
   </div>
 </template>
@@ -29,6 +24,13 @@ const loginForm = reactive({
   account: "",
   password: "",
 });
+
+const handleLogin = () => {
+  console.log(123);
+
+  console.log(loginForm);
+  ElMessage.error("Oops, this is a error message.");
+};
 </script>
 
 <style scoped lang="scss">

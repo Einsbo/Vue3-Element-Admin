@@ -16,5 +16,3 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 app.use(router);
 
 const mountedApp = app.mount("#app");
-
-console.log(mountedApp);
