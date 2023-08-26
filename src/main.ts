@@ -4,6 +4,7 @@ import App from "./App.vue";
 import "./style/index.scss";
 
 import router from "./router";
+import "./permissions";
 
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 

@@ -20,16 +20,28 @@
 </template>
 
 <script setup lang="ts">
+import { login } from "@/api/user";
+import { setToken } from "@/utils/auth";
+
+const router = useRouter();
+
 const loginForm = reactive({
   account: "",
   password: "",
 });
 
 const handleLogin = () => {
-  console.log(123);
+  login(loginForm).then((res: any) => {
+    const data = res.data;
+    console.log(data);
 
-  console.log(loginForm);
-  ElMessage.error("Oops, this is a error message.");
+    if (data.code === 200) {
+      setToken(data.token);
+      router.push("/");
+    } else {
+      ElMessage.error(data.msg);
+    }
+  });
 };
 </script>
 

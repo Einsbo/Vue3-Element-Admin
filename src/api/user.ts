@@ -2,24 +2,20 @@ import service from "@/utils/request";
 
 /**
  * 登录接口
- * @param username 用户名
- * @param password 密码
+ * @param data 其中包含用户名和密码
  * @returns
  */
-export function login(username: string, password: string): any {
+export function login(data: any) {
   return service.request({
-    url: "/login/",
+    url: "/user/login",
     method: "post",
-    data: {
-      username,
-      password,
-    },
+    data,
   });
 }
 
 export function user() {
   return service.request({
-    url: "/user/",
+    url: "/user/other",
     method: "post",
   });
 }
