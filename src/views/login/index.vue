@@ -25,6 +25,8 @@ import { setToken } from "@/utils/auth";
 
 const router = useRouter();
 
+/* HX90G WIN branch HX-90G */
+
 const loginForm = reactive({
   account: "",
   password: "",
