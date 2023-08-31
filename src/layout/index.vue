@@ -9,8 +9,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import Sidebar from "@/layout/Sidebar/index.vue";
+<script setup>
+import Sidebar from "@/layout/components/Sidebar/index.vue";
 </script>
 
 <style scoped lang="scss">

@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { login } from "@/api/user";
 import { setToken } from "@/utils/authToken";
 
@@ -31,7 +31,7 @@ const loginForm = reactive({
 });
 
 const handleLogin = () => {
-  login(loginForm).then((res: any) => {
+  login(loginForm).then((res) => {
     const data = res.data;
     console.log(data);
 

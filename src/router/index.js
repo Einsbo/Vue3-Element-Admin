@@ -1,8 +1,4 @@
-import {
-  createRouter,
-  createWebHistory,
-  type RouteRecordRaw,
-} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 /* Layout */
 import Layout from "@/layout/index.vue";
@@ -28,7 +24,7 @@ import Layout from "@/layout/index.vue";
  *
  */
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
     path: "/login",
     component: () => import("@/views/login/index.vue"),

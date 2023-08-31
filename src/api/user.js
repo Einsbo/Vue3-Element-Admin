@@ -5,7 +5,7 @@ import service from "@/utils/request";
  * @param data 其中包含用户名和密码
  * @returns
  */
-export function login(data: any) {
+export function login(data) {
   return service.request({
     url: "/user/login",
     method: "post",

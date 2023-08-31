@@ -14,7 +14,7 @@ const whiteList = ["/login"];
  * @Date: 2023-08-26 00:33:13
  * @LastEditors: Mengbaoxin
  * @LastEditTime: 2023-08-26 00:33:13
- * @FilePath: /vue3-project/src/permissions.ts
+ * @FilePath: /vue3-project/src/permissions.js
  *
  * 1. Determine whether to log in according to the token
  * 2. before each route enters, determine whether there is a token
