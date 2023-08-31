@@ -28,6 +28,7 @@ router.beforeEach((to, from, next) => {
   // determine whether the user has logged in
   const hasToken = getToken();
 
+  /* HX-90 MAC */
   if (hasToken) {
     // has token
     if (to.path === "/login") {
