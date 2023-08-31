@@ -66,4 +66,3 @@ const handleLogin = () => {
   }
 }
 </style>
-@/utils/authToken

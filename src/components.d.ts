@@ -7,10 +7,13 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ElCol: typeof import('element-plus/es')['ElCol']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
+    ElRow: typeof import('element-plus/es')['ElRow']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     First: typeof import('./components/First.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

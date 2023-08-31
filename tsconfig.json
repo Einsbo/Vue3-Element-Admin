@@ -4,12 +4,12 @@
   "exclude": ["node_modules"],
   "references": [
     {
-      "path": "./jsconfig.node.json"
+      "path": "./tsconfig.node.json"
     }
   ],
   "compilerOptions": {
-    "esModuleInterop": true,
-    "isolatedModules": true,
+    // "esModuleInterop": true,
+    // "isolatedModules": true,
     "strict": true,
     "baseUrl": ".",
     "paths": {
