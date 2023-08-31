@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { login } from "@/api/user";
-import { setToken } from "@/utils/auth";
+import { setToken } from "@/utils/authToken";
 
 const router = useRouter();
 
@@ -66,3 +66,4 @@ const handleLogin = () => {
   }
 }
 </style>
+@/utils/authToken

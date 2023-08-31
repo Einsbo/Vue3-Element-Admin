@@ -1,43 +1,48 @@
 import router from "./router";
-import { getToken } from "./utils/auth";
+import { getToken } from "./utils/authToken";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
+const whiteList = ["/login"];
+
 /**
- * @description: 权限控制
- * @param {any} to 跳转的路由，匹配 router.js 中的路由占位符
- * @param {any} from 来自哪个路由，匹配 router.js 中的路由占位符
- * @param {any} next 继续向下执行: 根据路由占位符匹配组件
+ * @description: permissions router
+ * @param {any} to: jump to the target route
+ * @param {any} from: jump from the current route
+ * @param {any} next: next function
  * @return {*}
  * @Date: 2023-08-26 00:33:13
  * @LastEditors: Mengbaoxin
  * @LastEditTime: 2023-08-26 00:33:13
  * @FilePath: /vue3-project/src/permissions.ts
  *
- * 1. 在路由跳转之前，判断是否有 token
- * 2. 如果有 token，就跳转到目标路由
- * 3. 如果没有 token，就跳转到登录页
- * 4. 如果是登录页，就直接跳转
- * 5. 根据 token 判断是否登陆
+ * 1. Determine whether to log in according to the token
+ * 2. before each route enters, determine whether there is a token
+ * 3. If there is a token, jump to the target route
+ * 4. If there is no token, jump to the login page
+ * 5. If it is the login page, jump directly
  */
 router.beforeEach((to, from, next) => {
   NProgress.start();
+
+  // determine whether the user has logged in
   const hasToken = getToken();
 
   if (hasToken) {
-    console.log("有token");
+    // has token
     if (to.path === "/login") {
       next();
     } else {
       next();
     }
   } else {
-    if (to.path === "/login") {
+    // has no token
+    if (whiteList.indexOf(to.path) !== -1) {
+      // in the free login whitelist, go directly
       next();
     } else {
       next({ path: "/login" });
     }
-    console.log("没有token");
   }
 });
 
