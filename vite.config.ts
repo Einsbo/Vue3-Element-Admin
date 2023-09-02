@@ -22,11 +22,11 @@ export default defineConfig({
       imports: ["vue", "vue-router"],
       resolvers: [ElementPlusResolver()],
 
-      dts: path.resolve(pathSrc, "auto-imports.d.js"),
+      dts: path.resolve(pathSrc, "auto-imports.d.ts"),
     }),
     Components({
       resolvers: [ElementPlusResolver()],
-      dts: path.resolve(pathSrc, "components.d.js"),
+      dts: path.resolve(pathSrc, "components.d.ts"),
     }),
   ],
   resolve: {

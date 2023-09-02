@@ -9,7 +9,7 @@
   ],
   "compilerOptions": {
     "esModuleInterop": true,
-    // "isolatedModules": true,
+    "isolatedModules": true,
     "strict": true,
     "baseUrl": ".",
     "paths": {

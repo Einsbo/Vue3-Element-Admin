@@ -19,9 +19,10 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { login } from "@/api/user";
 import { setToken } from "@/utils/authToken";
+// import { ElMessage } from "element-plus";
 
 const router = useRouter();
 
@@ -31,7 +32,7 @@ const loginForm = reactive({
 });
 
 const handleLogin = () => {
-  login(loginForm).then((res) => {
+  login(loginForm).then((res: any) => {
     const data = res.data;
     console.log(data);
 
@@ -39,7 +40,7 @@ const handleLogin = () => {
       setToken(data.token);
       router.push("/");
     } else {
-      ElMessage.error(data.msg);
+      ElMessage.error(data.message);
     }
   });
 };

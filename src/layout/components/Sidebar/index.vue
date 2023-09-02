@@ -5,7 +5,6 @@
   </el-radio-group> -->
   <el-row>
     <el-col :span="12">
-      <!-- <h5 class="mb-2">Custom colors</h5> -->
       <el-menu
         active-text-color="#ffd04b"
         background-color="#545c64"
@@ -21,9 +20,10 @@
   </el-row>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SidebarItem from "./SidebarItem.vue";
 
+// 获取路由
 const route = [
   { path: "/home", name: "Home" },
   { path: "/about", name: "About" },
@@ -43,10 +43,10 @@ const route = [
   { path: "/register", name: "Register" },
 ];
 
-const handleOpen = (key, keyPath) => {
+const handleOpen = (key: string, keyPath: object) => {
   console.log(key, keyPath);
 };
-const handleClose = (key, keyPath) => {
+const handleClose = (key: string, keyPath: object) => {
   console.log(key, keyPath);
 };
 </script>
