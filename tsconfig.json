@@ -8,8 +8,8 @@
     }
   ],
   "compilerOptions": {
-    // "esModuleInterop": true,
-    // "isolatedModules": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
     "strict": true,
     "baseUrl": ".",
     "paths": {
