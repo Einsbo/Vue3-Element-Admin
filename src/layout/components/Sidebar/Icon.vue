@@ -1,6 +1,7 @@
 <template>
   <div class="sidebarIcon" ref="sidebarIcon">
-    {{ icon }}
+    <!-- <el-icon><Lock /></el-icon> -->
+    <!-- {{ icon }} -->
   </div>
 </template>
 
@@ -12,6 +13,13 @@ const props = defineProps({
   },
 });
 
-const sidebarIcon = ref<HTMLElement | null>();
-console.log(sidebarIcon.value);
+const sidebarIcon = document.querySelector(".sidebarIcon");
+
+sidebarIcon.innerHTML = `<el-icon><Lock /></el-icon>`;
+
+// onMounted(() => {
+//   sidebarIcon.value.innerHTML = props.icon;
+//   console.log(sidebarIcon.value);
+// });
+// console.log(sidebarIcon.value);
 </script>
