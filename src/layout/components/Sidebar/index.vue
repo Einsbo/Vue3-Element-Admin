@@ -25,7 +25,7 @@ import SidebarItem from "./SidebarItem.vue";
 
 // 获取路由
 const route = [
-  { path: "/home", name: "Home" },
+  { path: "/home", name: "Home", icon: "Menu" },
   { path: "/about", name: "About" },
   {
     path: "/contact",

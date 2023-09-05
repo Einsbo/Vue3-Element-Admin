@@ -1,30 +1,25 @@
 <template>
-  <div class="sidebarItem" v-for="item in sidebarItems">
+  <div class="sidebarItems" v-for="item in sidebarItems">
     <el-sub-menu :index="item.path" v-if="item.children">
       <template #title>
-        <el-icon><location /></el-icon>
-        <span>{{ item.name }}</span>
+        <Item :icon="item.icon" :title="item.name" />
       </template>
+
       <SidebarItem :sidebarItems="item.children" />
     </el-sub-menu>
 
     <el-menu-item :index="item.path" v-else>
-      <!-- <el-icon><setting /></el-icon> -->
-      <!-- <el-icon><Lock /></el-icon> -->
-      <Icon :icon="icon" />
-      <span>{{ item.name }}</span>
+      <Item :icon="item.icon" :title="item.name" />
     </el-menu-item>
   </div>
 </template>
 
 <script setup lang="ts">
-import Icon from "./Icon.vue";
-
-const icon = "<el-icon><Lock /></el-icon>";
-
+import Item from "./Item.vue";
 interface RouteItem {
   path: string;
   name: string;
+  icon?: string;
   children?: RouteItem[];
 }
 
