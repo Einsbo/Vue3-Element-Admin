@@ -29,6 +29,4 @@ const props = defineProps({
     required: true,
   },
 });
-
-console.log(props.sidebarItems);
 </script>

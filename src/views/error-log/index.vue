@@ -1,3 +1,3 @@
 <template>
-  <div class="error-log">error-log</div>
+  <div id="error-log">error-log</div>
 </template>

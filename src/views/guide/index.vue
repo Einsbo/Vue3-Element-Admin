@@ -1,3 +1,3 @@
 <template>
-  <div class="guide">guide</div>
+  <div id="guide">guide</div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div id="login">
     <form action="" id="loginForm">
       <h2>系统登录</h2>
       <el-input v-model="loginForm.account" placeholder="账户" clearable>

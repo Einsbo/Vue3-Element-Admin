@@ -1,3 +1,3 @@
 <template>
-  <div class="excel">excel</div>
+  <div id="excel">excel</div>
 </template>

@@ -1,3 +1,3 @@
 <template>
-  <div class="error-page">error-page</div>
+  <div id="error-page">error-page</div>
 </template>

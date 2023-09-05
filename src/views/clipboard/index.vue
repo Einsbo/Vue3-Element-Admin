@@ -1,3 +1,3 @@
 <template>
-  <div class="clipboard">clipboard</div>
+  <div id="clipboard">clipboard</div>
 </template>
