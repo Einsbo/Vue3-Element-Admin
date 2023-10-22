@@ -10,7 +10,7 @@
         @open="handleOpen"
         @close="handleClose"
       >
-        <SidebarItem :sidebarItems="route" />
+        <SidebarItem :sidebarItems="routes" />
       </el-menu>
     </el-col>
   </el-row>
@@ -18,26 +18,30 @@
 
 <script setup lang="ts">
 import SidebarItem from "./SidebarItem.vue";
+import { routes } from "@/router";
 
-// 获取路由
-const route = [
-  { path: "/home", name: "Home", icon: "Menu" },
-  { path: "/about", name: "About" },
-  {
-    path: "/contact",
-    name: "Contact",
-    children: [
-      { path: "/contact/phone", name: "Phone" },
-      {
-        path: "/contact/email",
-        name: "Email",
-        children: [{ path: "/contact/email/1", name: "Email 1" }],
-      },
-    ],
-  },
-  { path: "/login", name: "Login" },
-  { path: "/register", name: "Register" },
-];
+// // let route = useRoute();
+// console.log(routes);
+
+// 获取路由;
+// const routes = [
+//   { path: "/home", name: "Home", icon: "Menu" },
+//   { path: "/about", name: "About", icon: "About" },
+//   {
+//     path: "/contact",
+//     name: "Contact",
+//     children: [
+//       { path: "/contact/phone", name: "Phone" },
+//       {
+//         path: "/contact/email",
+//         name: "Email",
+//         children: [{ path: "/contact/email/1", name: "Email 1" }],
+//       },
+//     ],
+//   },
+//   { path: "/login", name: "Login" },
+//   { path: "/register", name: "Register" },
+// ];
 
 const handleOpen = (key: string, keyPath: object) => {
   console.log(key, keyPath);

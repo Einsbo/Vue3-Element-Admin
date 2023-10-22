@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from "vue-router";
 /* Layout */
 import Layout from "@/layout/index.vue";
 
+import components from "./modules/components.ts";
+
 /**
  * Note: sub-menu only appear when route children.length >= 1
  *
@@ -24,13 +26,17 @@ import Layout from "@/layout/index.vue";
  *
  */
 
-const routes = [
+export const routes = [
   {
     path: "/login",
     component: () => import("@/views/login/index.vue"),
     name: "Login",
   },
-  { path: "/charts", component: () => import("@/views/charts/index.vue") },
+  {
+    path: "/charts",
+    component: () => import("@/views/charts/index.vue"),
+    name: "Charts",
+  },
   {
     path: "/",
     component: Layout,
@@ -43,6 +49,7 @@ const routes = [
       },
     ],
   },
+  components,
 ];
 
 const router = createRouter({

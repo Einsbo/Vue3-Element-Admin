@@ -1,8 +1,8 @@
 <template>
   <div id="login">
     <form action="" id="loginForm">
-      <h2>系统登录</h2>
-      <el-input v-model="loginForm.account" placeholder="账户" clearable>
+      <h2>Login Form</h2>
+      <el-input v-model="loginForm.account" placeholder="Username" clearable>
         <template #suffix>
           <el-icon><User /></el-icon>
         </template>
@@ -10,11 +10,11 @@
       <el-input
         v-model="loginForm.password"
         type="password"
-        placeholder="密码"
+        placeholder="Password"
         show-password
       >
       </el-input>
-      <el-button type="primary" @click="handleLogin">登陆</el-button>
+      <el-button type="primary" @click="handleLogin">Login</el-button>
     </form>
   </div>
 </template>
@@ -22,7 +22,6 @@
 <script setup lang="ts">
 import { login } from "@/api/user";
 import { setToken } from "@/utils/authToken";
-// import { ElMessage } from "element-plus";
 
 const router = useRouter();
 
@@ -34,7 +33,7 @@ const loginForm = reactive({
 const handleLogin = () => {
   login(loginForm).then((res: any) => {
     const data = res.data;
-    console.log(data);
+    // console.log(data);
 
     if (data.code === 200) {
       setToken(data.token);
@@ -47,15 +46,19 @@ const handleLogin = () => {
 </script>
 
 <style scoped lang="scss">
-.login {
+#login {
   height: 100%;
   background-image: url("./login.webp");
   background-repeat: no-repeat;
   background-size: cover;
-
   position: relative;
+  padding-top: 20%;
 
   form {
+    h2 {
+      padding: 20px 0;
+    }
+
     width: 300px;
     margin: 0 auto;
     padding: 20px;
@@ -63,7 +66,13 @@ const handleLogin = () => {
     border-radius: 5px;
     box-shadow: 0 0 5px #ccc;
     display: flex;
+    align-items: center;
     flex-direction: column;
+
+    button {
+      margin-top: 14px;
+      width: 100%;
+    }
   }
 }
 </style>

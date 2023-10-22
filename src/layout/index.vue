@@ -2,15 +2,22 @@
   <div class="layout">
     <Sidebar class="sidebar__container" />
     <div class="layout__container">
-      <div class="layout__header">HEADER</div>
+      <div class="layout__header">
+        <Navbar />
+        <TagsView />
+      </div>
       <router-view />
-      <aside>Right</aside>
+      <RightPanel><Settings /></RightPanel>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Sidebar from "@/layout/components/Sidebar/index.vue";
+import RightPanel from "@/components/RightPanel/index.vue";
+import Sidebar from "./components/Sidebar/index.vue";
+import Navbar from "./components/Navbar.vue";
+import TagsView from "./components/TagsView/index.vue";
+import Settings from "./components/Settings/index.vue";
 </script>
 
 <style scoped lang="scss">

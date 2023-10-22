@@ -21,12 +21,16 @@ interface RouteItem {
   name: string;
   icon?: string;
   children?: RouteItem[];
+  component: any;
 }
 
 const props = defineProps({
   sidebarItems: {
     type: Array as PropType<RouteItem[]>,
+
     required: true,
   },
 });
+
+// console.log(props.sidebarItems);
 </script>
