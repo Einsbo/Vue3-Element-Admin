@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const service = axios.create({
-  baseURL: "",
+  baseURL:
+    "https://www.fastmock.site/mock/44668ccc3b8a5ea748123fa2c79d0120/vue-element-admin",
   timeout: 5000,
 });
 

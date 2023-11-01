@@ -30,3 +30,7 @@ coverage
 
 */auto-imports.d.ts
 */components.d.ts
+
+test.js
+test.html
+axios_server.js

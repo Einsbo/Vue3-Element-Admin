@@ -1,6 +1,6 @@
 <template>
   <div id="login-container">
-    <video ref="backgroundVideo" id="background-video" autoplay loop muted>
+    <video id="background-video" autoplay loop muted>
       <source src="./bg-video.mp4" type="video/mp4" />
     </video>
 
@@ -49,34 +49,61 @@
 </template>
 
 <script lang="ts" setup>
-const backgroundVideo = ref<HTMLVideoElement | null>(null);
-
-onMounted(() => {
-  backgroundVideo.value.playbackRate = 0.2;
-  console.log(backgroundVideo.value.playbackRate);
-});
 // backgroundVideo.playbackRate = 1.5;
+import { login, userTest } from "@/api/user";
+login("admin", "123456").then((res) => {
+  console.log(res.data);
+});
+
+userTest("abc").then((res) => {
+  console.log(res.data);
+});
 </script>
 
 <style scoped lang="scss">
-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  height: auto;
-  width: auto;
-  filter: blur(15px);
-  -webkit-filter: grayscale(50%);
-  // filter: grayscale(50%);
-  z-index: -11;
+#login-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  source {
+  #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
     min-width: 100%;
     min-height: 100%;
     height: auto;
     width: auto;
+    z-index: -11;
+
+    source {
+      min-width: 100%;
+      min-height: 100%;
+      height: auto;
+      width: auto;
+    }
+  }
+
+  #login-form {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    form {
+      // display: flex;
+      // flex-direction: column;
+      transform: scale(1.1);
+      border: 3px solid rgb(255, 255, 255);
+      border-radius: 20px;
+      padding: 15px 50px;
+      .title-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }
 </style>
