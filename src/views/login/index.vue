@@ -51,8 +51,10 @@
 <script lang="ts" setup>
 // backgroundVideo.playbackRate = 1.5;
 import { login } from "@/api/user";
-
 const router = useRouter();
+
+let username = ref(),
+	password = ref();
 
 login("admin", "123456").then((res) => {
 	console.log(res.data);
@@ -62,8 +64,8 @@ function toPage(name: string, id: string) {
 	router.push({
 		name,
 		params: {
-			id
-		}
+			id,
+		},
 	});
 }
 
