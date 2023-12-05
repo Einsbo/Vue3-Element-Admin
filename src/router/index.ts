@@ -27,19 +27,29 @@ interface Meta {
 	activeMenu?: string;
 }
 
-export const constantRoutes: Array<RouteType> = [
-	{
-		path: "/login",
-		component: () => import("@/views/login/index.vue"),
-		hidden: true,
-	},
-];
+// export const constantRoutes: Array<RouteType> = [
+// 	{
+// 		path: "/login",
+// 		component: () => import("@/views/login/index.vue"),
+// 		hidden: true,
+// 	},
+// ];
 
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: "/",
+		component: () => import("@/views/home/index.vue"),
+		name: "Home",
+	},
+	{
+		path: "/login",
 		component: () => import("@/views/login/index.vue"),
 		name: "Login",
+	},
+	{
+		path: "/resume",
+		component: () => import("@/views/resume/index.vue"),
+		name: "Resume",
 	},
 	{
 		path: "/charts/:id",
@@ -57,6 +67,23 @@ const routes: Array<RouteRecordRaw> = [
 				path: "children2",
 				name: "Children2",
 				component: () => import("@/views/charts/children2.vue"),
+			},
+		],
+	},
+	{
+		path: "/csstest",
+		component: () => import("@/views/csstest/index.vue"),
+		name: "CSSTest",
+		children: [
+			{
+				path: "",
+				component: () => import("@/views/csstest/child/superCentered.vue"),
+				name: "SuperCentered",
+			},
+			{
+				path: "deconstructedPancake",
+				component: () => import("@/views/csstest/child/deconstructedPancake.vue"),
+				name: "DeconstructedPancake",
 			},
 		],
 	},

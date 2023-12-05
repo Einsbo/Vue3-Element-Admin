@@ -88,6 +88,12 @@ video {
   vertical-align: baseline;
 }
 
+h5 {font-size: 110%;}
+h4 {font-size: 120%;}
+h3 {font-size: 130%;}
+h2 {font-size: 140%;}
+h1 {font-size: 150%;}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
