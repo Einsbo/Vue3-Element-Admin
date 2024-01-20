@@ -43,7 +43,7 @@ const routes: Array<RouteRecordRaw> = [
 	},
 	{
 		path: "/login",
-		component: () => import("@/views/login/index.vue"),
+		component: () => import("@/views/Vue3-Element-Admin/login/index.vue"),
 		name: "Login",
 	},
 	{
